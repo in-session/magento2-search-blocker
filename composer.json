@@ -1,0 +1,19 @@
+{
+  "name": "insession/module-search-blocker",
+  "description": "Block or redirect blacklisted search terms in Magento 2",
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "license": "MIT",
+  "require": {
+    "php": ">=7.4",
+    "magento/framework": "*"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "InSession\\SearchBlocker\\": ""
+    }
+  }
+}

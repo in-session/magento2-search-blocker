@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\CatalogSearch\Controller\Result\Index">
+        <plugin name="insession_searchblocker_controller"
+                type="InSession\SearchBlocker\Plugin\PreventSearchOnController"
+                sortOrder="10"/>
+    </type>
+    <type name="Magento\CatalogGraphQl\Model\Resolver\Products">
+        <plugin name="insession_searchblocker_graphql"
+                type="InSession\SearchBlocker\Plugin\PreventSearchInGraphQl" />
+    </type>
+    <type name="Magento\Search\Api\SearchInterface">
+        <plugin name="insession_searchblocker_rest_api"
+                type="InSession\SearchBlocker\Plugin\PreventSearchOnRestApi" />
+    </type>
+    <type name="InSession\SearchBlocker\Logger\Logger">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="system" xsi:type="object">InSession\SearchBlocker\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

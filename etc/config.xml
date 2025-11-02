@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <insession_searchblocker>
+            <general>
+                <enabled>1</enabled>
+                <terms>gratis, test, porn, dummy</terms>
+                <redirect_path>/</redirect_path>
+                <enable_regex_filter>0</enable_regex_filter>
+            </general>
+        </insession_searchblocker>
+    </default>
+</config>
