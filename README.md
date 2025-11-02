@@ -92,8 +92,8 @@ bin/magento cache:flush
 
 ## 🧩 Compatibility
 
-- Magento **2.4.5 – 2.4.8**
-- PHP **8.1 – 8.3**
+- Magento **>2.4.5**
+- PHP **>8.1**
 - Fully compatible with **Hyvä Themes**
 
 ---
