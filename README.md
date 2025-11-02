@@ -1,4 +1,4 @@
-# 🛡️ InSession_SearchBlocker for Magento 2
+# 🛡️ Search blocker for Magento 2
 
 **InSession_SearchBlocker** is a lightweight Magento 2 security and hygiene module that prevents the use of **forbidden, suspicious, or empty search terms** across the Magento storefront, REST API, and GraphQL layer.  
 It helps protect your store from spammy searches, SQL-like injection attempts, and unnecessary search load.
