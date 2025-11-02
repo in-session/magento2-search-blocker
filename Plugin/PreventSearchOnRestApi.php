@@ -79,15 +79,11 @@ class PreventSearchOnRestApi
         /** @var string $normalized */
         $normalized = $this->extractSearchTerm($searchCriteria);
 
+        if ($normalized === '') {
+            return $proceed($searchCriteria);
+        }
+
         try {
-            // Empty search term
-            if ($normalized === '') {
-                throw new WebapiException(
-                    __('Please enter a search term.'),
-                    0,
-                    WebapiException::HTTP_BAD_REQUEST
-                );
-            }
 
             // SQL injection detection (API-safe regex)
             if (
