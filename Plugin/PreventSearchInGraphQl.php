@@ -85,12 +85,11 @@ class PreventSearchInGraphQl
         $query = (string)($args['search'] ?? '');
         $normalized = trim(mb_strtolower($query));
 
-        try {
-            // Empty search term
-            if ($normalized === '') {
-                throw new LocalizedException(__('Please enter a search term.'));
-            }
+        if ($normalized === '') {
+            return $proceed($field, $context, $info, $value, $args);
+        }
 
+        try {
             // SQL-injection detection (API-safe pattern)
             if (
                 $this->config->isRegexFilterEnabled() &&
