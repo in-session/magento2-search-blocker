@@ -108,7 +108,7 @@ class PreventSearchOnController
         try {
             // Empty term
             if ($normalized === '') {
-                throw new LocalizedException(__('Please enter a search term.'));
+                return $proceed();
             }
 
             // SQL injection detection
